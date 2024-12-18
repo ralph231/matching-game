@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card match - Memory Game</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/popup.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Card matching</h1>
+            <div class="level-info">
+                Level <span id="current-level">1</span><br>
+                Time Limit: <span id="time-limit">3:00</span>
+            </div>
+            <div class="score-container">
+                <div>Moves: <span id="moves">0</span></div>
+                <div>Time: <span id="time">0:00</span></div>
+                <div>Remaining: <span id="time-remaining">3:00</span></div>
+            </div>
+            <div class="audio-controls">
+                <button id="music-toggle" class="audio-btn">
+                    <i class="fas fa-music"></i>
+                </button>
+                <input type="range" id="music-volume" min="0" max="100" value="30" class="volume-slider">
+                <button id="sound-toggle" class="audio-btn">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="game-container">
+            <div id="cards-grid" class="cards-grid"></div>
+        </div>
+
+        <div class="victory-popup" id="victory-popup">
+            <div class="hearts">
+                <span class="heart" style="top: 10%; left: 10%;">❤️</span>
+                <span class="heart" style="top: 20%; left: 80%;">💖</span>
+                <span class="heart" style="top: 70%; left: 20%;">💝</span>
+                <span class="heart" style="top: 60%; left: 90%;">💕</span>
+            </div>
+            <h2>Level Complete!</h2>
+            <div class="stats">
+                <p>Moves: <span id="final-moves">0</span></p>
+                <p>Time: <span id="final-time">0:00</span></p>
+            </div>
+            <button class="next-level-btn" id="next-level-btn">Next Level</button>
+        </div>
+    </div>
+
+    <footer class="cute-footer">
+        <div class="footer-decorations">
+            <span class="footer-heart">💝</span>
+            <span class="footer-star">⭐</span>
+            <span class="footer-flower">🌸</span>
+            <span class="footer-sparkle">✨</span>
+            <span class="footer-butterfly">🦋</span>
+        </div>
+        <div class="footer-content">
+            <p class="footer-text">Made with <span class="heart-beat">💖</span> for all memory game lovers!</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/ven0697/" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-wave"></div>
+    </footer>
+
+    <script type="module" src="/js/config.js"></script>
+    <script type="module" src="/js/utils.js"></script>
+    <script type="module" src="/js/cards.js"></script>
+    <script type="module" src="/js/components/Card.js"></script>
+    <script type="module" src="/js/components/Timer.js"></script>
+    <script type="module" src="/js/components/GameUI.js"></script>
+    <script type="module" src="/js/components/AudioManager.js"></script>
+    <script type="module" src="/js/levelManager.js"></script>
+    <script type="module" src="/js/game.js"></script>
+    <script type="module">
+        import MatchingGame from '/js/game.js';
+        new MatchingGame();
+    </script>
+</body>
+</html>
